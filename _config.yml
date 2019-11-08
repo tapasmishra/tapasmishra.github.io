@@ -2,15 +2,15 @@ url: https://tapasmishra.github.io
 baseurl: /
 
 # Site settings
-title: Tapas Mishra
+title: LinuxFunda
 email: tapas.mishra@linuxfunda.com
 description: "Tapas Mishra Profile page"
 
 
 # Team names, titles and social links
 people:
- - name: Kay Garland
-   pic: 1
+ - name: Tapas Mishra
+   pic: 0
    position: Lead Designer
    social:
      - title: twitter
@@ -33,8 +33,8 @@ social:
 
 # Postal address (add as many lines as necessary)
 address:
-  - line: 3481 Melrose Place
-  - line: Beverly Hills, CA 90210
+  - line: U-804, Sai Pearl, Near Alcove
+  - line: Kunal Icon Road, Pimple Sudagar, Pune, India - 4011027
 
 # Build settings
 markdown: kramdown
