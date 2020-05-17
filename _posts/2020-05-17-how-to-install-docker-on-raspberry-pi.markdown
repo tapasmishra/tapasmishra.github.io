@@ -137,3 +137,6 @@ root@raspberrypi:~# cat /etc/group | grep docker
 docker:x:995:pi
 root@raspberrypi:~#
 {% endhighlight %}
+
+Let us switch to the `pi` user and see if we are able to run any `docker` command or not
+
