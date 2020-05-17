@@ -176,3 +176,5 @@ For more examples and ideas, visit:
 
 pi@raspberrypi:~ $
 ```
+
+Iterate all the above steps on all the Pi's to install `Docker`. In next chapter we will install / configure `Docker Swarm Cluster`. 
