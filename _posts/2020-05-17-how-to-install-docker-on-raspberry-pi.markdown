@@ -140,6 +140,10 @@ root@raspberrypi:~#
 
 Let us switch to the `pi` user and see if we are able to run any `docker` command or not
 
+### Run hello-world container
+
+Using the below command we will run the `hello-world` container.
+
 ```javascript
 pi@raspberrypi:~ $ docker run hello-world
 Unable to find image 'hello-world:latest' locally
