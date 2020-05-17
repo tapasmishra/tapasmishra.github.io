@@ -141,27 +141,33 @@ root@raspberrypi:~#
 Let us switch to the `pi` user and see if we are able to run any `docker` command or not
 
 {% highlight js %}
-root@raspberrypi:~# su - pi
-pi@raspberrypi:~ $ systemctl status docker
-т docker.service - Docker Application Container Engine
-   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
-   Active: active (running) since Sun 2020-05-17 21:41:52 IST; 1h 1min ago
-     Docs: https://docs.docker.com
- Main PID: 2512 (dockerd)
-    Tasks: 14
-   Memory: 32.0M
-   CGroup: /system.slice/docker.service
-           тт2512 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+pi@raspberrypi:~ $ docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+4ee5c797bcd7: Pull complete
+Digest: sha256:6a65f928fb91fcfbc963f7aa6d57c8eeb426ad9a20c7ee045538ef34847f44f1
+Status: Downloaded newer image for hello-world:latest
 
-May 17 21:41:50 raspberrypi dockerd[2512]: time="2020-05-17T21:41:50.476987850+05:30" level=warning msg="Your ke
-May 17 21:41:50 raspberrypi dockerd[2512]: time="2020-05-17T21:41:50.477281208+05:30" level=warning msg="Your ke
-May 17 21:41:50 raspberrypi dockerd[2512]: time="2020-05-17T21:41:50.477549641+05:30" level=warning msg="Your ke
-May 17 21:41:50 raspberrypi dockerd[2512]: time="2020-05-17T21:41:50.478434938+05:30" level=info msg="Loading co
-May 17 21:41:51 raspberrypi dockerd[2512]: time="2020-05-17T21:41:51.446593060+05:30" level=info msg="Default br
-May 17 21:41:51 raspberrypi dockerd[2512]: time="2020-05-17T21:41:51.843889041+05:30" level=info msg="Loading co
-May 17 21:41:51 raspberrypi dockerd[2512]: time="2020-05-17T21:41:51.963961928+05:30" level=info msg="Docker dae
-May 17 21:41:51 raspberrypi dockerd[2512]: time="2020-05-17T21:41:51.964632011+05:30" level=info msg="Daemon has
-May 17 21:41:52 raspberrypi dockerd[2512]: time="2020-05-17T21:41:52.070110361+05:30" level=info msg="API listen
-May 17 21:41:52 raspberrypi systemd[1]: Started Docker Application Container Engine.
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (arm32v7)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
 pi@raspberrypi:~ $
 {% endhighlight %}
