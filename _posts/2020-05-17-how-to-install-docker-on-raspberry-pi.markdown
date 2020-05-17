@@ -223,7 +223,7 @@ pi@raspberrypi:~ $
 
 Using the below command we will run the `hello-world` container.
 
-{% highlight %}
+{% highlight js %}
 pi@raspberrypi:~ $ docker run hello-world
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
