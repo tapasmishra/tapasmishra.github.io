@@ -142,58 +142,6 @@ Let us switch to the `pi` user and see if we are able to run any `docker` comman
 
 {% highlight js %}
 root@raspberrypi:~# su - pi
-pi@raspberrypi:~ $ docker info
-Client:
- Debug Mode: false
-
-Server:
- Containers: 0
-  Running: 0
-  Paused: 0
-  Stopped: 0
- Images: 0
- Server Version: 19.03.8
- Storage Driver: overlay2
-  Backing Filesystem: <unknown>
-  Supports d_type: true
-  Native Overlay Diff: true
- Logging Driver: json-file
- Cgroup Driver: cgroupfs
- Plugins:
-  Volume: local
-  Network: bridge host ipvlan macvlan null overlay
-  Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
- Swarm: inactive
- Runtimes: runc
- Default Runtime: runc
- Init Binary: docker-init
- containerd version: 7ad184331fa3e55e52b890ea95e65ba581ae3429
- runc version: dc9208a3303feef5b3839f4323d9beb36df0a9dd
- init version: fec3683
- Security Options:
-  seccomp
-   Profile: default
- Kernel Version: 4.19.97-v7l+
- Operating System: Raspbian GNU/Linux 10 (buster)
- OSType: linux
- Architecture: armv7l
- CPUs: 4
- Total Memory: 3.814GiB
- Name: raspberrypi
- ID: BE3V:WOKU:2M6Y:EUPU:RJOE:67AV:NWTI:3YAO:3A7K:MZRT:M65I:NY2O
- Docker Root Dir: /var/lib/docker
- Debug Mode: false
- Registry: https://index.docker.io/v1/
- Labels:
- Experimental: false
- Insecure Registries:
-  127.0.0.0/8
- Live Restore Enabled: false
-
-WARNING: No swap limit support
-WARNING: No cpu cfs quota support
-WARNING: No cpu cfs period support
-pi@raspberrypi:~ $
 pi@raspberrypi:~ $ systemctl status docker
 â docker.service - Docker Application Container Engine
    Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
