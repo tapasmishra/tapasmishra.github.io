@@ -11,7 +11,7 @@ categories: docker
 
 | Platform       | Number of Instances |
 |:---------------|:-------------------:|
-| Raspberry Pi 4 | 3                   |
+| Raspberry Pi 4         | 3                   |
 
 ### Installing Docker on Raspberry Pi
 
