@@ -1,41 +1,53 @@
-url: https://tapasmishra.github.io
-baseurl: /
+title: Welcome to LinuxFunda
+description: This is a blog site for DevOps lovers. 
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "tapasmishra.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
-# Site settings
-title: LinuxFunda
-email: tapas.mishra@linuxfunda.com
-description: "Tapas Mishra Profile page"
+# Author
+author-name:    Tapas Mishra
+author-image:   1.jpg
+author-job:     Lead Software Engineer
+author-email:   tapas.mishra@linuxfunda.com # Add your email for contant form.
+author-twitter: linuxfunda # Add your twitter account
+about-author:   I am a software developer focusing on DevOps principles. Always hungry to keep learning.
 
+# Social settings
+social-twitter:   linuxfunda
+social-facebook:
+social-github:    tapasmishra
+social-pinterest: 
+social-instagram: tapaspreeti
+social-youtube:
+social-vk:   
+social-linkedin:
 
-# Team names, titles and social links
-people:
- - name: Tapas Mishra
-   pic: 1
-   position: Lead Designer
-   social:
-     - title: twitter
-       url: #
-     - title: facebook
-       url: #
-     - title: stack-overflow
-       url: #
+# Newsletter
+mailchimp: # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
 
-# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
-social:
-  - title: twitter
-    url: http://twitter.com/linuxfunda
-  - title: facebook
-    url:
-  - title: stack-overflow
-    url: http://stackoverflow.com/questions/tagged/linuxfunda
-  - title: github
-    url: http://github.com/tapasmishra
+# Google Analytics
+google-analytics: # Add your identifier. For example UA-99631805-1
 
-# Postal address (add as many lines as necessary)
-address:
-  - line: U-804, Sai Pearl, Near Alcove
-  - line: Kunal Icon Road, Pimple Sudagar, Pune, India - 4011027
+# Comment Section (Disqus)
+disqus-identifier: mr-brown # Add your shortname for Disqus Comment. For example mr-brown
 
 # Build settings
 markdown: kramdown
-permalink: pretty
+permalink: /:year/:month/:day/:title/
+plugins:
+  - jekyll-paginate
+
+paginate: 7
+paginate_path: "/page/:num/"
+
+include:
+  - _pages
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Exclude from processing.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
