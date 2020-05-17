@@ -80,6 +80,17 @@ A paragraph looks like this — dolor amet cray stumptown fingerstache neutra fo
 
 ***
 
+	$('.top').click(function () {
+		$('html, body').stop().animate({ scrollTop: 0 }, 'slow', 'swing');
+	});
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > $(window).height()) {
+			$('.top').addClass("top-active");
+		} else {
+			$('.top').removeClass("top-active");
+		};
+	});
+
 #### Images
 
 ![]({{site.baseurl}}/images/2.jpg)
