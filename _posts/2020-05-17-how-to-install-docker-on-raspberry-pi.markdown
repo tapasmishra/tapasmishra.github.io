@@ -216,7 +216,6 @@ May 17 21:41:51 raspberrypi dockerd[2512]: time="2020-05-17T21:41:51.964632011+0
 May 17 21:41:52 raspberrypi dockerd[2512]: time="2020-05-17T21:41:52.070110361+05:30" level=info msg="API listen
 May 17 21:41:52 raspberrypi systemd[1]: Started Docker Application Container Engine.
 pi@raspberrypi:~ $
-
 {% endhighlight %}
 
 ### Run hello-world container
@@ -254,3 +253,5 @@ For more examples and ideas, visit:
 
 pi@raspberrypi:~ $
 {% endhighlight %}
+
+End
