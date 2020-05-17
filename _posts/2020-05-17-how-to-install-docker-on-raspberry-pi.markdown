@@ -10,7 +10,7 @@ categories: docker
 ### Hardware 
 
 | Platform       | Number of Instances |
-|:----------------|:---------------------:|
+|:---------------|:-------------------:|
 | Raspberry Pi 4 | 3                   |
 
 ### Installing Docker on Raspberry Pi
