@@ -32,7 +32,8 @@ disqus-identifier: # Add your shortname for Disqus Comment. For example mr-brown
 
 # Build settings
 markdown: kramdown
-permalink: /:year/:month/:day/:title/
+#permalink: /:year/:month/:day/:title/
+permalink: ':title/'
 plugins:
   - jekyll-paginate
 
@@ -41,6 +42,11 @@ paginate_path: "/page/:num/"
 
 include:
   - _pages
+  
+plugins:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jemoji
 
 sass:
   sass_dir: _sass
