@@ -140,7 +140,7 @@ root@raspberrypi:~#
 
 Let us switch to the `pi` user and see if we are able to run any `docker` command or not
 
-```shellscript
+```javascript
 root@raspberrypi:~# su - pi
 pi@raspberrypi:~ $ docker info
 Client:
