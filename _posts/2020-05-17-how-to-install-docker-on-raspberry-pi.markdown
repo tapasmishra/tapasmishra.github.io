@@ -7,13 +7,13 @@ tags: [Docker, Linux]
 categories: docker
 ---
 
-## Hardware 
+### Hardware 
 
 | Platform       | Number of Instances |
 |----------------|---------------------|
 | Raspberry Pi 4 | 3                   |
 
-## Installing Docker on Raspberry Pi
+### Installing Docker on Raspberry Pi
 
 To install Docker on our Reaspberry Pi first we need to SSH to the instance and then we have to switch to `root` user to proceed with installation. 
 
@@ -93,7 +93,7 @@ WARNING: Adding a user to the "docker" group will grant the ability to run
 root@raspberrypi:~#
 {% endhighlight %}
 
-## Verify Docker version
+### Verify Docker version
 
 {% highlight js %}
 root@raspberrypi:~# docker version
