@@ -253,4 +253,4 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 
 pi@raspberrypi:~ $
-{% endhilight %}
+{% endhighlight %}
