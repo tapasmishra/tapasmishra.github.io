@@ -1,7 +1,7 @@
 title: Welcome to LinuxFunda
 description: This is a blog site for DevOps lovers. 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "tapasmishra.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "www.linuxfunda.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Author
 author-name:    Tapas Mishra
