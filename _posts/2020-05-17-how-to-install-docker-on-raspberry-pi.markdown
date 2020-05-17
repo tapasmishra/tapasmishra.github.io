@@ -131,7 +131,7 @@ Now we have installed Docker `19.03` on our Rasphberry Pi. But if you careffully
 
 In our case we have to add `pi` user to the `docker` group. Below is the command that we nee to execute to add the user `pi` to `docker` group and verify:
 
-{% highlight %}
+{% highlight shellscript%}
 root@raspberrypi:~# usermod -aG docker pi
 root@raspberrypi:~# cat /etc/group | grep docker
 docker:x:995:pi
