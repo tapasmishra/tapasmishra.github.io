@@ -140,7 +140,7 @@ root@raspberrypi:~#
 
 Let us switch to the `pi` user and see if we are able to run any `docker` command or not
 
-{% highlight js %}
+```javascript
 pi@raspberrypi:~ $ docker run hello-world
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
@@ -170,4 +170,4 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 
 pi@raspberrypi:~ $
-{% endhighlight %}
+```
