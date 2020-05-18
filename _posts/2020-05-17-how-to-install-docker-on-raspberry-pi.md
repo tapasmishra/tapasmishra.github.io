@@ -1,10 +1,11 @@
 ---
-layout: post
 title: How to install Docker on Raspberry Pi
-image: docker.jpg
 date: 2020-05-17 13:35:20 +0200
-tags: [Docker, Linux]
-categories: docker
+tags: 
+  - Docker
+  - Linux
+categories: 
+  - docker
 ---
 
 ### Installing Docker on Raspberry Pi
