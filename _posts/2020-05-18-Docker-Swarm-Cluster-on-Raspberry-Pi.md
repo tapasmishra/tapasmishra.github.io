@@ -131,7 +131,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 pi@raspberrypi:~ $
 ```
 As you see I just stopped the container `3980624ded92` which was belongs to the task `web.1`. Let's list the service task again. 
-```javascript
+```python
 pi@raspberrypi:~ $ docker service ps web
 ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE            ERROR               PORTS
 jn3cdf50h5yy        web.1               nginx:latest        raspberrypi         Running             Running 23 minutes ago
