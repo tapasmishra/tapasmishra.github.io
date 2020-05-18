@@ -18,7 +18,7 @@ First upall tet us setup a 1 node Sawrm Cluster. We will see how Swarm mode work
 
 To create the Swarm you need to first SSH to the host machine whre the Docker engine is installed. In my case I will SSH to the maching which IP is `192.168.0.131`
 
-```shellscript
+```ruby
 
 Using username "pi".
 pi@192.168.0.131's password:
@@ -37,7 +37,7 @@ pi@raspberrypi:~ $
 
 Run the following command to start a new swarm:
 
-```shellscript
+```ruby
 pi@raspberrypi:~ $ docker swarm init
 Swarm initialized: current node (jdu8ge8rafvdsiu9x9nhvhymp) is now a manager.
 
@@ -54,7 +54,7 @@ pi@raspberrypi:~ $
 
 Run the below mentioned `node ls` command to list all available nodes.
 
-```shellscript
+```ruby
 pi@raspberrypi:~ $ docker node ls
 ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
 jdu8ge8rafvdsiu9x9nhvhymp *   raspberrypi         Ready               Active              Leader              19.03.8
@@ -66,7 +66,7 @@ To run a container inside the swarm normal `docker run` command won't work. This
 
 Run the command mentioned below to start/ run a nginx container inside swarm as `web` service. 
 
-```shellscript
+```ruby
 pi@raspberrypi:~ $ docker service create --name web --publish 8080:80 nginx
 htlom33no80y56f5zcyqwx6ak
 overall progress: 1 out of 1 tasks
@@ -76,7 +76,7 @@ pi@raspberrypi:~ $
 ```
 Here we are asking docker to create a service and name it as `web`. Publish the container port 80 to host port 8080. Use `nginx` image for the container. Now run the bellow command to list our serices.
 
-```shellscript
+```ruby
 pi@raspberrypi:~ $ docker service ls
 ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
 htlom33no80y        web                 replicated          1/1                 nginx:latest        *:8080->80/tcp
@@ -84,7 +84,7 @@ pi@raspberrypi:~ $
 ```
 You can see now we have a service running inside our Swarm. Let's run the below command to see the running task of the service. 
 
-```shellscript
+```ruby
 pi@raspberrypi:~ $ docker service ps web
 ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE           ERROR               PORTS
 jn3cdf50h5yy        web.1               nginx:latest        raspberrypi         Running             Running 8 minutes ago
@@ -93,7 +93,7 @@ pi@raspberrypi:~ $
 
 Cool, we can see 1 task is running for the service `web` named `web.1`. If you want to increase the number of instance/ task for the service use bellow command:
 
-```shellscript
+```ruby
 pi@raspberrypi:~ $ docker service update --replicas 3 web
 web
 overall progress: 3 out of 3 tasks
@@ -105,7 +105,7 @@ pi@raspberrypi:~ $
 ```
 As we asked our service to run 3 task instead 1 now we can run the command `docker ps` to list all the task. 
 
-```shellscript
+```ruby
 pi@raspberrypi:~ $ docker service ps web
 ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE            ERROR               PORTS
 jn3cdf50h5yy        web.1               nginx:latest        raspberrypi         Running             Running 16 minutes ago
@@ -114,7 +114,7 @@ nb7a6w2lgvzb        web.3               nginx:latest        raspberrypi         
 pi@raspberrypi:~ $
 ```
 WoW!! Now we can see 3 task are running for the service `web`. Now let's do some nasty thing to our service. Let's kill one conrainter using `docker stop` command and see what is happening to our service inside the `swarm`.
-```javascript
+```ruby
 pi@raspberrypi:~ $ docker ps -a
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
 6893a035fbb8        nginx:latest        "nginx -g 'daemon of…"   5 minutes ago       Up 5 minutes        80/tcp              web.2.yzlqjru481dblmddeijz1o70c
