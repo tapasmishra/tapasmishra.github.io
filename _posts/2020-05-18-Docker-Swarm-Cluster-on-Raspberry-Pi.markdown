@@ -109,32 +109,3 @@ nb7a6w2lgvzb        web.3               nginx:latest        raspberrypi         
 pi@raspberrypi:~ $
 ```
 WoW!! Now we can see 3 task are running for the service `web`. Now let's do some nasty thing to our service. Let's kill one conrainter using `docker stop` command and see what is happening to our service inside the `swarm`.
-```javascript
-pi@raspberrypi:~ $ docker ps -a
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
-6893a035fbb8        nginx:latest        "nginx -g 'daemon of…"   5 minutes ago       Up 5 minutes        80/tcp              web.2.yzlqjru481dblmddeijz1o70c
-3980624ded92        nginx:latest        "nginx -g 'daemon of…"   5 minutes ago       Up 5 minutes        80/tcp              web.3.nb7a6w2lgvzby5o6fmmrwmok4
-950638b3f7e8        nginx:latest        "nginx -g 'daemon of…"   20 minutes ago      Up 19 minutes       80/tcp              web.1.jn3cdf50h5yys8unst29dnmdj
-pi@raspberrypi:~ $ docker stop 3980624ded92
-3980624ded92
-pi@raspberrypi:~ $ docker ps -a
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS               NAMES
-6d4b447aa0ac        nginx:latest        "nginx -g 'daemon of…"   4 seconds ago       Created                                        web.3.x8b2bp33rklh93fmjqsgvvi1l
-6893a035fbb8        nginx:latest        "nginx -g 'daemon of…"   6 minutes ago       Up 6 minutes               80/tcp              web.2.yzlqjru481dblmddeijz1o70c
-3980624ded92        nginx:latest        "nginx -g 'daemon of…"   6 minutes ago       Exited (0) 5 seconds ago                       web.3.nb7a6w2lgvzby5o6fmmrwmok4
-950638b3f7e8        nginx:latest        "nginx -g 'daemon of…"   20 minutes ago      Up 20 minutes              80/tcp              web.1.jn3cdf50h5yys8unst29dnmdj
-pi@raspberrypi:~ $
-```
-As you see I just stopped the container `3980624ded92` which was belongs to the task `web.1`. Let's list the service task again. 
-```javascript
-pi@raspberrypi:~ $ docker service ps web
-ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE            ERROR               PORTS
-jn3cdf50h5yy        web.1               nginx:latest        raspberrypi         Running             Running 23 minutes ago
-yzlqjru481db        web.2               nginx:latest        raspberrypi         Running             Running 9 minutes ago
-x8b2bp33rklh        web.3               nginx:latest        raspberrypi         Running             Running 3 minutes ago
-nb7a6w2lgvzb         \_ web.3           nginx:latest        raspberrypi         Shutdown            Complete 3 minutes ago
-pi@raspberrypi:~ $
-```
-Now we can see 4 entries for our service. But, the state of the last task is `Shutdown`. This proofs that `Swarm` keeps the history with it and helps us to make our application fault-tolerant. 
-
-In our next chapter we will add 2 more nodes to our `Swarm mode` to play with it. 
