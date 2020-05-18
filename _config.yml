@@ -23,6 +23,7 @@ twitter_username: linuxfunda
 github_username: tapasmishra
 minimal_mistakes_skin: default
 search: true
+words_per_minute: 150
 
 # Build settings
 markdown: kramdown
