@@ -1,10 +1,13 @@
 ---
-layout: post
 title: Setup Docker Swarm Cluster on Raspberry Pi
-image: docker-swarm.jpg
 date: 2020-05-18 13:35:20 +0200
-tags: [Docker, Linux, Swarm, Cluster]
-categories: docker
+tags: 
+  - Docker 
+  - Linux 
+  - Swarm
+  - Cluster
+categories: 
+  - docker
 ---
 
 In the [previous chapter](https://www.linuxfunda.com/how-to-install-docker-on-raspberry-pi/) we learnt how to install Docker engine. Now in this chapter we will learn how to install Swarm mode. 
@@ -112,17 +115,17 @@ WoW!! Now we can see 3 task are running for the service `web`. Now let's do some
 ```javascript
 pi@raspberrypi:~ $ docker ps -a
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
-6893a035fbb8        nginx:latest        "nginx -g 'daemon of…"   5 minutes ago       Up 5 minutes        80/tcp              web.2.yzlqjru481dblmddeijz1o70c
-3980624ded92        nginx:latest        "nginx -g 'daemon of…"   5 minutes ago       Up 5 minutes        80/tcp              web.3.nb7a6w2lgvzby5o6fmmrwmok4
-950638b3f7e8        nginx:latest        "nginx -g 'daemon of…"   20 minutes ago      Up 19 minutes       80/tcp              web.1.jn3cdf50h5yys8unst29dnmdj
+6893a035fbb8        nginx:latest        "nginx -g 'daemon ofâ€¦"   5 minutes ago       Up 5 minutes        80/tcp              web.2.yzlqjru481dblmddeijz1o70c
+3980624ded92        nginx:latest        "nginx -g 'daemon ofâ€¦"   5 minutes ago       Up 5 minutes        80/tcp              web.3.nb7a6w2lgvzby5o6fmmrwmok4
+950638b3f7e8        nginx:latest        "nginx -g 'daemon ofâ€¦"   20 minutes ago      Up 19 minutes       80/tcp              web.1.jn3cdf50h5yys8unst29dnmdj
 pi@raspberrypi:~ $ docker stop 3980624ded92
 3980624ded92
 pi@raspberrypi:~ $ docker ps -a
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS               NAMES
-6d4b447aa0ac        nginx:latest        "nginx -g 'daemon of…"   4 seconds ago       Created                                        web.3.x8b2bp33rklh93fmjqsgvvi1l
-6893a035fbb8        nginx:latest        "nginx -g 'daemon of…"   6 minutes ago       Up 6 minutes               80/tcp              web.2.yzlqjru481dblmddeijz1o70c
-3980624ded92        nginx:latest        "nginx -g 'daemon of…"   6 minutes ago       Exited (0) 5 seconds ago                       web.3.nb7a6w2lgvzby5o6fmmrwmok4
-950638b3f7e8        nginx:latest        "nginx -g 'daemon of…"   20 minutes ago      Up 20 minutes              80/tcp              web.1.jn3cdf50h5yys8unst29dnmdj
+6d4b447aa0ac        nginx:latest        "nginx -g 'daemon ofâ€¦"   4 seconds ago       Created                                        web.3.x8b2bp33rklh93fmjqsgvvi1l
+6893a035fbb8        nginx:latest        "nginx -g 'daemon ofâ€¦"   6 minutes ago       Up 6 minutes               80/tcp              web.2.yzlqjru481dblmddeijz1o70c
+3980624ded92        nginx:latest        "nginx -g 'daemon ofâ€¦"   6 minutes ago       Exited (0) 5 seconds ago                       web.3.nb7a6w2lgvzby5o6fmmrwmok4
+950638b3f7e8        nginx:latest        "nginx -g 'daemon ofâ€¦"   20 minutes ago      Up 20 minutes              80/tcp              web.1.jn3cdf50h5yys8unst29dnmdj
 pi@raspberrypi:~ $
 ```
 As you see I just stopped the container `3980624ded92` which was belongs to the task `web.1`. Let's list the service task again. 
