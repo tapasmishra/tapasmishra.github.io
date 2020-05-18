@@ -1,5 +1,7 @@
 ---
 title: Setup Docker Swarm Cluster on Raspberry Pi
+header:
+  image: /assets/images/docker-swarm.jpg
 date: 2020-05-18 13:35:20 +0200
 tags: 
   - Docker 
