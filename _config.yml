@@ -1,59 +1,113 @@
-title: Welcome to LinuxFunda
-description: This is a blog site for DevOps lovers. 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "www.linuxfunda.com" # the base hostname & protocol for your site, e.g. http://example.com
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# Author
-author-name:    Tapas Mishra
-author-image:   1.jpg
-author-job:     Lead Software Engineer, Mastercard
-author-email:   tapas.mishra@linuxfunda.com # Add your email for contant form.
-author-facebook: LinuxFunda # Add your twitter account
-about-author:   I am a software developer focusing on DevOps principles. Always hungry to keep learning.
-
-# Social settings
-social-twitter:   linuxfunda
-social-facebook:
-social-github:    tapasmishra
-social-pinterest: 
-social-instagram: tspaspreeti
-social-youtube:
-social-vk:   
-social-linkedin:
-
-# Newsletter
-mailchimp: # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
-
-# Google Analytics
-google-analytics: UA-42559050-1 # Add your identifier. For example UA-99631805-1
-
-# Comment Section (Disqus)
-disqus-identifier: # Add your shortname for Disqus Comment. For example mr-brown
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: LinuxFunda
+email: tapas.mishra@linuxfunda.com
+description: >- # this means to ignore newlines until "baseurl:"
+  This blog site will help 
+twitter_username: linuxfunda
+github_username: tapasmishra
+minimal_mistakes_skin: default
+search: true
 
 # Build settings
 markdown: kramdown
-#permalink: /:year/:month/:day/:title/
-permalink: ':title/'
-plugins:
-  - jekyll-paginate
-
-paginate: 7
-paginate_path: "/page/:num/"
+remote_theme: mmistakes/minimal-mistakes
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
   - _pages
-  
-plugins:
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jemoji
-
-sass:
-  sass_dir: _sass
-  style: compressed
 
 # Exclude from processing.
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - vendor
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+
+author:
+  name   : "Tapas Mishra"
+  avatar : "/assets/images/1.jpg"
+  bio    : "I am a software developer focusing on DevOps principles. Always hungry to keep learning."
+  links:
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.linuxfunda.com"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/tapasmishra"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/tspaspreeti"
+
+footer:
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/linuxfunda"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/tapasmishra"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/tspaspreeti"
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
