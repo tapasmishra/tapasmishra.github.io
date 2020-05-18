@@ -7,6 +7,8 @@ tags: [Docker, Linux]
 categories: docker
 ---
 
+In the [previous chapter](https://www.linuxfunda.com/how-to-install-docker-on-raspberry-pi/) we learnt how to install Docker engine. Now in this chapter we will learn how to install Swarm mode. 
+
 ### Hardware 
 
 Let us setup a 3 node Sawrm Cluster

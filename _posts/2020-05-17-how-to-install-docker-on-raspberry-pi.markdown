@@ -7,12 +7,6 @@ tags: [Docker, Linux]
 categories: docker
 ---
 
-### Hardware 
-
-| Platform       	| Number of Instances |
-|:---------------	|:-------------------:|
-| Raspberry Pi 4    | 3                   |
-
 ### Installing Docker on Raspberry Pi
 
 To install Docker on our Reaspberry Pi first we need to SSH to the instance and then we have to switch to `root` user to proceed with installation. 
@@ -177,4 +171,4 @@ For more examples and ideas, visit:
 pi@raspberrypi:~ $
 ```
 
-Iterate all the above steps on all the Pi's to install `Docker`. In next chapter we will install / configure `Docker Swarm Cluster`. 
+In next chapter we will install / configure [`Docker Swarm Cluster`](https://www.linuxfunda.com/Docker-Swarm-Cluster-on-Raspberry-Pi/). 
