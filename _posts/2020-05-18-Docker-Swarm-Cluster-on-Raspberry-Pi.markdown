@@ -109,7 +109,7 @@ nb7a6w2lgvzb        web.3               nginx:latest        raspberrypi         
 pi@raspberrypi:~ $
 ```
 WoW!! Now we can see 3 task are running for the service `web`. Now let's do some nasty thing to our service. Let's kill one conrainter using `docker stop` command and see what is happening to our service inside the `swarm`.
-```shellscript
+```javascript
 pi@raspberrypi:~ $ docker ps -a
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
 6893a035fbb8        nginx:latest        "nginx -g 'daemon of…"   5 minutes ago       Up 5 minutes        80/tcp              web.2.yzlqjru481dblmddeijz1o70c
@@ -126,7 +126,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 pi@raspberrypi:~ $
 ```
 As you see I just stopped the container `3980624ded92` which was belongs to the task `web.1`. Let's list the service task again. 
-```shellscript
+```javascript
 pi@raspberrypi:~ $ docker service ps web
 ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE            ERROR               PORTS
 jn3cdf50h5yy        web.1               nginx:latest        raspberrypi         Running             Running 23 minutes ago
