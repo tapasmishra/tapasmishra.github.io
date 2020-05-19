@@ -3,7 +3,7 @@ title: Setup Docker Swarm Single node Cluster on Raspberry Pi
 header:
   image: /assets/images/swarm.png
   teaser: /assets/images/swarm.png
-date: 2020-05-18 13:35:20 +0200
+date: 2020-05-20 13:35:20 +0200
 tags: 
   - Docker 
   - Linux 
