@@ -175,4 +175,4 @@ For more examples and ideas, visit:
 pi@raspberrypi:~ $
 ```
 
-In next chapter we will install / configure [`Docker Swarm Cluster`](https://www.linuxfunda.com/Docker-Swarm-Cluster-on-Raspberry-Pi/). 
+In next chapter we will install / configure [`Docker Swarm Cluster`](https://www.linuxfunda.com/docker/Docker-Swarm-Cluster-on-Raspberry-Pi/). 

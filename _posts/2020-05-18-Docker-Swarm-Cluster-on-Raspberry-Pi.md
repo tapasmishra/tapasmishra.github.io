@@ -1,7 +1,8 @@
 ---
 title: Setup Docker Swarm Cluster on Raspberry Pi
 header:
-  image: /assets/images/docker-swarm.jpg
+  image: /assets/images/swarm.png
+  teaser: /assets/images/swarm.png
 date: 2020-05-18 13:35:20 +0200
 tags: 
   - Docker 
@@ -12,7 +13,7 @@ categories:
   - docker
 ---
 
-In the [previous chapter](https://www.linuxfunda.com/how-to-install-docker-on-raspberry-pi/) we learnt how to install Docker engine. Now in this chapter we will learn how to install Swarm mode. 
+In the [previous chapter](https://www.linuxfunda.com/docker/how-to-install-docker-on-raspberry-pi/) we learnt how to install Docker engine. Now in this chapter we will learn how to install Swarm mode. 
 
 First upall tet us setup a 1 node Sawrm Cluster. We will see how Swarm mode works and we will understand few components of it. Then in our next chapter we will add 2 more nodes to our cluster. Asuming that we have already installed Docker Engine on our instance I will directly start from configuring the Swarm Mode. 
 
