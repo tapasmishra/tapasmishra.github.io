@@ -114,3 +114,10 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+comments:
+  provider: "facebook"
+  facebook:
+    appid: # optional
+    num_posts: 10 # 5 (default)
+    colorscheme: # "light" (default), "dark"
