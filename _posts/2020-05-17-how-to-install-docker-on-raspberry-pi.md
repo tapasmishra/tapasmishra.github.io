@@ -2,6 +2,7 @@
 title: How to install Docker on Raspberry Pi
 header:
   image: /assets/images/docker.jpg
+  teaser: /assets/images/docker.jpg
 date: 2020-05-17 13:35:20 +0200
 tags: 
   - Docker
