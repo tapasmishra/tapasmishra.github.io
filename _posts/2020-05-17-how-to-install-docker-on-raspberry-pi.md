@@ -7,8 +7,10 @@ date: 2020-05-17 13:35:20 +0200
 tags: 
   - Docker
   - Linux
+  - raspberrypi
 categories: 
   - docker
+  - raspberrypi
 ---
 
 ### Installing Docker on Raspberry Pi
