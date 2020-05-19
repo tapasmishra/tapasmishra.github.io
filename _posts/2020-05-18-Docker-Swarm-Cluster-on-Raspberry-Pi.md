@@ -11,13 +11,18 @@ tags:
   - Cluster
 categories: 
   - docker
+toc: true
+toc_label: "Table of Contents"
+toc_icon: "cog"
 ---
-
+## Description
 In the [previous chapter](https://www.linuxfunda.com/docker/how-to-install-docker-on-raspberry-pi/) we learnt how to install Docker engine. Now in this chapter we will learn how to install Swarm mode. 
 
-First upall tet us setup a 1 node Sawrm Cluster. We will see how Swarm mode works and we will understand few components of it. Then in our next chapter we will add 2 more nodes to our cluster. Asuming that we have already installed Docker Engine on our instance I will directly start from configuring the Swarm Mode. 
+First upall let us setup a single node Sawrm Cluster. We will see how Swarm mode works and we will understand few components of it. Then in our next chapter we will add 2 more nodes to our cluster. Asuming that we have already installed Docker Engine on our instance I will directly start creating the Swarm Mode. 
 
-To create the Swarm you need to first SSH to the host machine whre the Docker engine is installed. In my case I will SSH to the maching which IP is `192.168.0.131`
+## Install Swarm mode
+
+To create the Swarm you need to first SSH to the host machine where the Docker engine is installed. In my case I will SSH to the machine which IP is `192.168.0.131`
 
 ```ruby
 
@@ -36,7 +41,7 @@ pi@raspberrypi:~ $
 
 ```
 
-Run the following command to start a new swarm:
+Run the following command on the hostmachine to start a new swarm:
 
 ```ruby
 pi@raspberrypi:~ $ docker swarm init
@@ -62,8 +67,10 @@ jdu8ge8rafvdsiu9x9nhvhymp *   raspberrypi         Ready               Active    
 pi@raspberrypi:~ $
 ```
 
-Now you can see that we have one node which is basically a `Leader` is activie and it's stastus is ready. On the machine we have installed the Docker engine and on top of that we have created a Swarm mode. Now we can either choose the Docker engine to run our container or we can run our container inside our Docker Swarm. Lets start and run a container inside our swarm.
+Now we can see one node which is basically a `Leader`, is in activie state and it's stastus is ready. On the machine we have installed the Docker engine and on top of that we have created a Swarm mode. Now we can either choose the Docker engine to run our container or we can run our container inside our Docker Swarm. Lets start and run a container inside our swarm.
 To run a container inside the swarm normal `docker run` command won't work. This will start the container in the Docker engine itself. To start a container inside the swarm we have use the command `docker service`.
+
+## Deploy service to Swarm
 
 Run the command mentioned below to start/ run a nginx container inside swarm as `web` service. 
 
@@ -75,7 +82,7 @@ overall progress: 1 out of 1 tasks
 verify: Service converged
 pi@raspberrypi:~ $
 ```
-Here we are asking docker to create a service and name it as `web`. Publish the container port 80 to host port 8080. Use `nginx` image for the container. Now run the bellow command to list our serices.
+Here we are asking docker to create a service named as `web`. Publish the container port 80 to host port 8080. Use `nginx` image for the container. Now run the bellow command to list our serices.
 
 ```ruby
 pi@raspberrypi:~ $ docker service ls
@@ -92,7 +99,11 @@ jn3cdf50h5yy        web.1               nginx:latest        raspberrypi         
 pi@raspberrypi:~ $
 ```
 
-Cool, we can see 1 task is running for the service `web` named `web.1`. If you want to increase the number of instance/ task for the service use bellow command:
+Cool, we can see one task is running for the service `web` named `web.1`. 
+
+## Scale the service on Swarm 
+
+To increase the number of instance/ task for the service use bellow command:
 
 ```ruby
 pi@raspberrypi:~ $ docker service update --replicas 3 web
@@ -104,7 +115,9 @@ overall progress: 3 out of 3 tasks
 verify: Service converged
 pi@raspberrypi:~ $
 ```
-As we asked our service to run 3 task instead 1 now we can run the command `docker ps` to list all the task. 
+
+Let us see the output of the command `docker ps`. 
+
 
 ```ruby
 pi@raspberrypi:~ $ docker service ps web
@@ -114,7 +127,9 @@ yzlqjru481db        web.2               nginx:latest        raspberrypi         
 nb7a6w2lgvzb        web.3               nginx:latest        raspberrypi         Running             Running 2 minutes ago
 pi@raspberrypi:~ $
 ```
-WoW!! Now we can see 3 task are running for the service `web`. Now let's do some nasty thing to our service. Let's kill one conrainter using `docker stop` command and see what is happening to our service inside the `swarm`.
+
+WoW!! Now we can see three task are running for the service `web`. Now let's do some nasty thing to our service. Let's kill one conrainter using `docker stop` command and see what is happening to our service inside the `swarm`.
+
 ```ruby
 pi@raspberrypi:~ $ docker ps -a
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
@@ -131,7 +146,9 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 950638b3f7e8        nginx:latest        "nginx -g 'daemon of…"   20 minutes ago      Up 20 minutes              80/tcp              web.1.jn3cdf50h5yys8unst29dnmdj
 pi@raspberrypi:~ $
 ```
+
 As you see I just stopped the container `3980624ded92` which was belongs to the task `web.1`. Let's list the service task again. 
+
 ```python
 pi@raspberrypi:~ $ docker service ps web
 ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE            ERROR               PORTS
