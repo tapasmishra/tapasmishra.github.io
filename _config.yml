@@ -24,6 +24,7 @@ github_username: tapasmishra
 minimal_mistakes_skin: air
 search: true
 words_per_minute: 150
+logo: "/assets/images/l_f4.png"
 
 # Build settings
 markdown: kramdown
