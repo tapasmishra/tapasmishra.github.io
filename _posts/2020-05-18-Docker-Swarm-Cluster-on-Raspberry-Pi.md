@@ -14,7 +14,8 @@ categories:
 toc: true
 toc_label: "Table of Contents"
 toc_icon: "cog"
-toc_sticky: false
+toc_sticky: true
+
 ---
 
 ## Description
