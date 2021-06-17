@@ -7,6 +7,7 @@ date: 2021-06-17 16:22:20 +0200
 tags: 
   - kubernetes
   - k8s
+  - k8sSeries
 categories: 
   - kubernetes
 toc: true
