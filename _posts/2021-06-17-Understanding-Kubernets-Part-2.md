@@ -32,7 +32,7 @@ Lets assume that we have a Kubernetes Cluster which consists of one `Control Pan
 Now just think about what will happen if the Worker Node B will go offline due to certain resons. Answer to this quesion is the controller will deploy one more replica of the pod on Woker Node A.
 
 <figure>
-  <a href="/assets/images/kubn-cluster-k8s-II-serise-exmpII.png"><img src="/assets/images/kuber-cluster-k8s-II-serise-exmpII.png"></a>
+  <a href="/assets/images/kubn-cluster-k8s-II-serise-exmpII.png"><img src="/assets/images/kubn-cluster-k8s-II-serise-exmpII.png"></a>
   <figcaption>"Kubernetes Cluster with a failed Worker Node"</figcaption>
 </figure>
 
