@@ -48,12 +48,18 @@ Kubernetes networking situation:
 - Pod-to-Service
 - Internet-to-Service
 
-Let's discuss about the above network variations one by one.
+In Linux each process on your machine communicates inside a network namespace. This namespace creates a logical networking stack with its own network devices, firewall rules, and routes. When you run a process, it is assigned by default to your root network namespace. This provides the process with external access. Let's discuss about the above Kubernetes network variations one by one.
 
 ## Container-to-Container:
-
-In Linux each process on your machine communicates inside a network namespace. This namespace creates a logical networking stack with its own network devices, firewall rules, and routes. When you run a process, it is assigned by default to your root network namespace. This provides the process with external access.
 
 In Kubernetes containers are grouped as pods, each with a shared namespace. In pod each container will have same IP and port and port space. They can use localhost to communicate with each other as they are within same namespace. 
 
 ## Pod-to-Pod
+
+As we know to distribute load Kubernetes Controller can deploy pods across several Worker Nodes or it could be on the same Worker Node as well. In Kubernetes each pod has a real IP address and each pod communicates with other pods using that IP address. Now we have to understand how the communication is happening in between pods using Real IP address, where they may or may not located in a same worker node. 
+
+Let's start discussing pods on the same node. From pods prospecitve each pods exists in it's own Ethernet namespace that needs to communicate with other network namespace on the same node. In Linux namespaces can connect with each other using Virtual Ethernet Device or veth pair consisting of two vertual interface that can spread over multiple namespaces. To connect pod network namespace we can assign one side of the veth pair to the root namespace and other to the pod's network namespace. Now the veth pair will work like a patch cable and allow trafic to flow between. Same configuration needs to be applied to the all pods exists on the Worker node. After the pod got connected to the root namespace it will be able to connect to the other pods using a network bridge.
+
+A Linux Ethernet bridge is a virtual Layer 2 networking device used to unite two or more network segments, working transparently to connect two networks together. The bridge operates by maintaining a forwarding table between sources and destinations by examining the destination of the data packets that travel through it and deciding whether or not to pass the packets to other network segments connected to the bridge. The bridging code decides whether to bridge data or to drop it by looking at the MAC-address unique to each Ethernet device in the network.
+
+So far we were able to know how the packtes moves in between pods which are located in a same machine. But now we will discuss how a pod will communicate with another pod located on a different machine. Each Node on the Kubernetes cluster is assigned with a CIDR block specifying the IP addresses available to the Pods on that Node. Once the traffic destinated for a CIDR reaches at the Node, it's the Node's responsibility to forward that traffic to the relevant pod. But if the CIDR is not there in the Node then the packate will be routed to the root namespace i.e. the `eth0` device. Now the packet will enter in the network and will be routed to the Node which has the correct CIDR and the bridge interface of that Node will route the packate to it's correct pod.
