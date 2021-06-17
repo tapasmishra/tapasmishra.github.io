@@ -1,6 +1,8 @@
 ---
 title: Understanding Kubernetes Part-I
 header:
+  image: /assets/images/kubernetes-banner.png
+  teaser: /assets/images/kubernetes-banner.png
 date: 2021-06-17 16:22:20 +0200
 tags: 
   - kubernetes
@@ -31,6 +33,11 @@ Kubernetes has multiple funcionalities which makes it as a greater and mostly ad
 | 5 | Service |
 | 6 | Kubelet |
 | 7 | kubectl | 
+
+<figure>
+  <a href="/assets/images/kubernetes-architecture.png"><img src="/assets/images/kubernetes-architecture.png"></a>
+  <figcaption>"Image downloaded from google"</figcaption>
+</figure>
 
 ### Kubernetes API Server
 
