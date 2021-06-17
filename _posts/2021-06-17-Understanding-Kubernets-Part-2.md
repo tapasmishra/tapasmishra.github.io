@@ -33,7 +33,7 @@ Now just think about what will happen if the Worker Node B will go offline due t
 
 <figure>
   <a href="/assets/images/kuber-cluster-k8s-II-serise-exmpII.PNG"><img src="/assets/images/kuber-cluster-k8s-II-serise-exmpII.PNG"></a>
-  <figcaption>"Kubernetes Cluster"</figcaption>
+  <figcaption>"Kubernetes Cluster with a failed Worker Node"</figcaption>
 </figure>
 
 Why the controller deployed the 3rd replica set to the Worker Node A and not Control Panel node? And answer to this is by default Control panel node is desiged to only host the sytem pods. You can twik kubernetes cluster configuration to host deployment pods on the Control Panel node but it's not advisable to do in production clusters. You can experiment in your development cluster.  
