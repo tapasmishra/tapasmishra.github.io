@@ -3,8 +3,8 @@ title: Understanding Kubernetes Part-I
 header:
 date: 2021-06-17 16:22:20 +0200
 tags: 
-  -  #kubernetes
-  -  #k8s
+  - kubernetes
+  - k8s
 categories: 
   - kubernetes
 toc: true
