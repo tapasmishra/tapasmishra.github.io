@@ -25,14 +25,14 @@ In our previous chapter from [#k8sSeries](https://www.linuxfunda.com/tags/#k8sSe
 Lets assume that we have a Kubernetes Cluster which consists of one `Control Pannel` node and two `Worker nodes`. We instructed kubernetes using `kubectl` to deploy `pod` with replica set 3. As a result it deployed 2 # of pods on Worker Node A and 1 # of pod in Worker Node B to distribute the workload.  
 
 <figure>
-  <a href="/assets/images/kuber-cluster-k8s-II-serise.png"><img src="/assets/images/kuber-cluster-k8s-II-serise.png"></a>
+  <a href="/assets/images/kuber-cluster-k8s-II-serise.PNG"><img src="/assets/images/kuber-cluster-k8s-II-serise.PNG"></a>
   <figcaption>"Kubernetes Cluster"</figcaption>
 </figure>
 
 Now just think about what will happen if the Worker Node B will go offline due to certain resons. Answer to this quesion is the controller will deploy one more replica of the pod on Woker Node A.
 
 <figure>
-  <a href="/assets/images/kuber-cluster-k8s-II-serise-exmpII.png"><img src="/assets/images/kuber-cluster-k8s-II-serise-exmpII.png"></a>
+  <a href="/assets/images/kuber-cluster-k8s-II-serise-exmpII.PNG"><img src="/assets/images/kuber-cluster-k8s-II-serise-exmpII.PNG"></a>
   <figcaption>"Kubernetes Cluster"</figcaption>
 </figure>
 
