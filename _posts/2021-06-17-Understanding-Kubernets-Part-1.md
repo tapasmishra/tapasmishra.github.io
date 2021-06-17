@@ -36,10 +36,11 @@ Kubernetes has multiple funcionalities which makes it as a greater and mostly ad
 | 10 | Pods |
 | 11 | Service |
 | 12 | kubectl | 
+| 13 | Useful Ad-on Pods|
 
 <figure>
   <a href="/assets/images/kubernetes-architecture.png"><img src="/assets/images/kubernetes-architecture.png"></a>
-  <figcaption>"Image downloaded from google"</figcaption>
+  <figcaption>"Image Source: google"</figcaption>
 </figure>
 
 ## Control Plane node
@@ -56,7 +57,7 @@ Perstist the state of the api objects as Key-value pairs.
 
 ### Scheduler
 
-Watches API server for any unscheduled pods and scheduled it on nodes. Evaluates the resource requirements for the pod in terms of CPU, memory and storage and make sure their availability before placing a pod inside a specific node of the cluster. It's responsible to span the pods across all the nodes. 
+Watches API server for any unscheduled pods and scheduled it on nodes. Evaluates the resource requirements for the pods in terms of CPU, memory and storage and make sure their availability before placing these pods inside a specific node of the cluster. It's responsible to span the pods across all the nodes. 
 
 ### Controllers
 
@@ -72,11 +73,11 @@ This service runs on nodes. It registers the node with the API server using host
 
 ### Kube-proxy 
 
-Kube-proxy runs on nodes and responsible for the pod networking. 
+Kube-proxy runs on nodes and responsible for the pod networking. It manages the iptables and also responsible for the load balancing. 
 
 ### Container Runtime
 
-This also runs inside the worker nodes and this is the actual run time environment for the containers which supports to run the pod. It is responsible to pull the container from the container register and provide the execution environment for that container. 
+This also runs inside the worker nodes and this is the actual run time environment for the containers which supports to run the pod. It is responsible to pull the container from the container registry and provide the execution environment for that container. 
 
 ### Pods
 
@@ -90,3 +91,18 @@ This decouples work definitions from the pods. Kubernetes service proxies automa
 
 kubectl is the command line tool for Kubernetes which controls the Kubernetes cluster manager.
 
+## Useful Ad-on Pods
+
+Adon pods or the special pods on the cluster provides special services to the cluster. 
+
+### DNS
+
+DNS service will provide the DNS to the culster using core DNS. All the pods, nodes are services will register their names in the DNS server. It's basiccally used for the service discovery of the applicaiton deployed inside the cluster. 
+
+### Ingress
+
+Ingress pods are basically http or layer 7 load balancer. 
+
+### Dashboard
+
+This service will provide you a Web Based administrative UI to administrate the Kubernetes cluster. 
