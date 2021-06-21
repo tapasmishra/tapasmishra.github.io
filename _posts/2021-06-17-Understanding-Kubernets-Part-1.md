@@ -17,11 +17,11 @@ toc_sticky: true
 
 ---
 
-In short Kubernets which is also knows as "`k8s`" is a container orchestration platrom; facilating automation around deployment, management and scaling containrized applications (`Cloud-Native` or `Micro Services`). It can be build and run on distributed systems over a cluster of machines. The cluster machines can span across Public, private and Hybrid Cloud. 
+In short Kubernets which is also knows as "`k8s`" is a container orchestration platform; facilitating automation around deployment, management and scaling containerized applications (`Cloud-Native` or `Micro Services`). It can be build and run on distributed systems over a cluster of machines. The cluster machines can span across Public, private and Hybrid Cloud. 
 
 # Kubernets Components
 
-Kubernetes has multiple funcionalities which makes it as a greater and mostly adoptable container orchestration platfrom. Here we will discuss about few popular funcionalities, those are playing critial role in Kubernets. 
+Kubernetes has multiple functionalities which makes it as a greater and mostly adoptable container orchestration platform. Here we will discuss about few popular functionalities, those are playing critical role in Kubernets. 
 
 | Sl. No. | Name |
 | :------ | :--- |
@@ -46,7 +46,7 @@ Kubernetes has multiple funcionalities which makes it as a greater and mostly ad
 
 ## Control Plane node
 
-A control plane node is also known as Master node. It implements the major cotroll options of the cluster. It coordinates cluster operaions, monitorings,  pod schedulling and finally it is he main access point for he cluster operation. 
+A control plane node is also known as Master node. It implements the major control options of the cluster. It coordinates cluster operations, monitoring,  pod scheduling and finally it is he main access point for he cluster operation. 
 
 ### Kubernetes API Server
 
@@ -54,7 +54,7 @@ In Kubernets everything is API calls which is basically served by the Kubernets 
 
 ### etcd
 
-Perstist the state of the api objects as Key-value pairs. 
+Persists the state of the api objects as Key-value pairs. 
 
 ### Scheduler
 
@@ -66,7 +66,7 @@ In Kubernetes, a controller is a control loop that watches the shared state of t
 
 ## Nodes
 
-Nodes are also known as worker nodes. These machines perform the requested tasks assigned by the control plane. Actualy this is the place where application pods will run.  Nodes are responsible to starting up the pods and the containers that required for the pods. Nodes implement networking to ensure the reachability to the services and pods running on the worker node. Finally nodes can be bare metal, virtual machines, or anything else.
+Nodes are also known as worker nodes. These machines perform the requested tasks assigned by the control plane. Actually this is the place where application pods will run.  Nodes are responsible to starting up the pods and the containers that required for the pods. Nodes implement networking to ensure the reachability to the services and pods running on the worker node. Finally nodes can be bare metal, virtual machines, or anything else.
 
 ### Kubelet
 
@@ -94,11 +94,11 @@ kubectl is the command line tool for Kubernetes which controls the Kubernetes cl
 
 ## Useful Ad-on Pods
 
-Adon pods or the special pods on the cluster provides special services to the cluster. 
+Ad-on pods or the special pods on the cluster provides special services to the cluster. 
 
 ### DNS
 
-DNS service will provide the DNS to the culster using core DNS. All the pods, nodes are services will register their names in the DNS server. It's basiccally used for the service discovery of the applicaiton deployed inside the cluster. 
+DNS service will provide the DNS to the cluster using core DNS. All the pods, nodes are services will register their names in the DNS server. It's basically used for the service discovery of the application deployed inside the cluster. 
 
 ### Ingress
 
