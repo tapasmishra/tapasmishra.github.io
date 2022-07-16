@@ -39,7 +39,7 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 sudo bash get-docker.sh
 ```
 
-***Post Installatation step for Linux***
+### Post Installatation step for Linux
 
 The Docker daemon binds to a Unix socket instead of a TCP port. By default that Unix socket is owned by the user root and other users can only access it using sudo. The Docker daemon always runs as the root user.
 
@@ -56,7 +56,7 @@ Log out and log back in so that your group membership is re-evaluated
 
 ## Step 2 - Installing and Running Minikube
 
-### Linux: 
+### Linux
 
 To install the latest minikube stable release on x86-64 Linux using binary download execute the below command:
 
@@ -65,7 +65,7 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ```
 
-### macOS:
+### macOS
 
 To install the latest minikube stable release on x86-64 macOS using binary download execute the below command:
 
@@ -74,7 +74,7 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin
 sudo install minikube-darwin-amd64 /usr/local/bin/minikube
 ```
 
-### Windows:
+### Windows
 
 To install the latest minikube stable release on x86-64 Windows using .exe download:
 
