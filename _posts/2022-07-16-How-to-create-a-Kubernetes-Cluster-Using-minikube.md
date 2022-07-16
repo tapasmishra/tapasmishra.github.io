@@ -48,9 +48,13 @@ If you don’t want to preface the docker command with sudo, create a Unix group
 To create the docker group and add your user:
 
 - Create the docker group.
-```sudo groupadd docker```
+```
+sudo groupadd docker
+```
 - Add your user to the docker group.
- ```sudo usermod -aG docker $USER```
+```
+sudo usermod -aG docker $USER
+```
 
 Log out and log back in so that your group membership is re-evaluated
 
@@ -121,7 +125,7 @@ ubuntu@kube-test:~$
 
 ## Step 3 - Interact with your cluster
 
-Inorder to interact with the kubernetes cluster you need to have kubctl command line installed on your system. To Install kubectl follow the below steps.
+Inorder to interact with the kubernetes cluster you need to have `kubctl` command line installed on your system. To Install `kubectl` follow the below steps.
 
 Download the latest release with the command:
 
@@ -162,15 +166,12 @@ kube-system   storage-provisioner                1/1     Running   1 (17m ago)  
 
 ## Step 4 — Deploying and Testing a Sample App
 
-You can use the kubectl command to deploy a test application to your Minikube cluster. The following command will retrieve and deploy a sample Kubernetes application – in this case, Google’s hello-app.
+Let's deploy `Google’s hello-app` in our cluster using `kubectl` command. Execute the below command to deploy:
 
 ```
 kubectl create deployment web --image=gcr.io/google-samples/hello-app:1.0
 ```
-
-This command creates a deployment, which you are calling web inside your cluster, from a remote image called hello-app on gcr.io, Google’s container registry.
-
-Next, expose the web deployment as a Kubernetes Service, specifying a static port where it will be accessible with --type=NodePort and --port=8080:
+Basically the above command will pull the `1.0` versoin of the `hello-app` image from `gcr.io` container regiesty. To access the deployed application now we have to expose it as a service, specifying a static port where it will be accessible with `--type=NodePort` and `--port=8080`:
 
 ```
 kubectl expose deployment web --type=NodePort --port=8080
@@ -191,7 +192,7 @@ web    NodePort   10.99.228.187   <none>        8080:32272/TCP   8s
 ubuntu@kube-test:~$
 ```
 
-Now you can use minikube to retrieve a URL that is accessible outside of the container. This URL will allow you to access the hello-app service that is running on port 8080 inside your cluster. If you are running Minikube locally, you will not need to perform any active port forwarding using this method. To retrieve the URL for your sample application, run the following minikube service web –url command:
+Now we can use `minikube` command to retrieve a URL that is accessible outside of the container. 
 
 ```
 minikube service web --url
